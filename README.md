@@ -1,18 +1,18 @@
 ## Future Data Helps Training: Modeling Future Contexts for Session-based Recommendation
 This is a PyTorch implementation of [Future Data Helps Training: Modelling Future Contexts for Session-based Recommendation](https://arxiv.org/pdf/1906.04473.pdf).
 
-Session-based recommender systems have attracted much attention recently. To capture the sequential dependencies, existing methods resort either to data augmentation techniques or left-to-right style autoregressive training. Since these methods are aimed to model the sequential nature of user behaviors, they ignore the future data of a target interaction when constructing the prediction model for it. However, we argue that the future interactions after a target interaction, which are also available during training, provide valuable signal on user preference and can be used to enhance the
-recommendation quality.
+To capture the sequential dependencies, existing session-based recommender systems resort either to data augmentation techniques or left-to-right style autoregressive training. However, this work argues that the **future interactions** after a target interaction, which are also available during training, provide valuable signal on user preference and can be used to enhance the recommendation quality. 
 
-Properly integrating future data into model training, however, is non-trivial to achieve, since it disobeys machine learning principles and can easily cause data leakage. To this end, we propose a new encoder-decoder framework named Gap-filling based Recommender (GRec), which trains the encoder and decoder by a gap-filling mechanism. Specifically, the encoder takes a partially-complete session sequence (where some items are masked by purpose) as input, and the decoder predicts these masked items conditioned on the encoded representation. We instantiate the general GRec framework using convolutional neural network with sparse kernels, giving consideration to both accuracy and efficiency. We conduct experiments on two real-world datasets covering short-, medium-, and longrange user sessions, showing that GRec significantly outperforms the state-of-the-art sequential recommendation methods. More empirical studies verify the high utility of modeling future contexts
-under our GRec framework.
+To avoid data leakage while integrating future data into model training, this work proposes a new encoder-decoder framework named **Gap-filling based Recommender (GRec)**, which trains the encoder and decoder by a gap-filling mechanism.
+
+<div align=center> <img src="picture/architechture.png" height="500" div align=center> </div>
 
 
 ## Implementation
 NextItNet pytorch version: https://github.com/syiswell/NextItNet-Pytorch, of which architecture is useful to this work.
 
 ### Requirements
-- Python 3.9, CPU or NVIDIA GPU
+- Python 3.9, NVIDIA GPU or CPU
 - PyTorch 1.11.0
 
 
