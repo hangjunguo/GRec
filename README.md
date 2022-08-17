@@ -9,7 +9,7 @@ To avoid data leakage while integrating future data into model training, this wo
 
 
 ## Implementation
-NextItNet pytorch version: https://github.com/syiswell/NextItNet-Pytorch, of which architecture is useful to this work.
+NextItNet pytorch version: https://github.com/syiswell/NextItNet-Pytorch, of which architecture maybe useful to this work.
 
 ### Requirements
 - Python 3.9, NVIDIA GPU or CPU
